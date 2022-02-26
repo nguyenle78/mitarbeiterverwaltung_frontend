@@ -12,14 +12,16 @@
 
             </li>
         </ul>
-
+        <form class="form-inline my-2 my-lg-0">
+            <input type="search" (ngModelChange)="seachMitarbeiter(key.value)" #key="ngModel" ngModel name="key" id="searchName" class="form-control mr-sm-2" placeholder="Suchen.." required>
+        </form>
     </div>
 </nav>
 <!--Main Container-->
 <div class="container" id="main-container">
     <div class="row">
         <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
-            <div class="card m-b-30">
+            <div class="card border-light mb-3 background">
                 <div class="card-body row">
                     <div class="col-6">
                         <a href=""><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>

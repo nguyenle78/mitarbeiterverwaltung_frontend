@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
       (response: Employee) => {
         console.log(response);
         this.getEmployees();
+        //Clear Form on "Save Change/Add buttonclick"
         addForm.reset();
       },
       (error: HttpErrorResponse) => {
@@ -70,8 +71,8 @@ export class AppComponent implements OnInit {
       }
     );
   }
-
-  public searchEmployees(key: string): void {
+//Function to search on name/email/phone/titel, literry anthing typed in search bar
+  public seachMitarbeiter(key: string): void {
     console.log(key);
     const results: Employee[] = [];
     for (const employee of this.employees) {
